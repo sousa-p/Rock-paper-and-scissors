@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>✊ ✋ ✌️</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="game">
+                <div class="wrapper-options" id="wrapper-enemy">
+                    <div class="options-container" id="container-enemy">
+                        <div class="points" id="enemyPoints">0</div>
+                        <div class="options" id="enemy-option-1"><img src="./images/rock.png" alt="✊"></div>
+                        <div class="options" id="enemy-option-2"><img src="./images/paper.png" alt="✋"></div>
+                        <div class="options" id="enemy-option-3"><img src="./images/scissor.png" alt="✌️"></div>
+                    </div>
+                </div>
+                <div class="wrapper-options" id="wrapper-player">
+                    <div class="options-container" id="container-player">
+                        <div class="options" id="player-option-1" onclick="round(0);"><img src="./images/rock.png" alt="✊"></div>
+                        <div class="options" id="player-option-2" onclick="round(1);"><img src="./images/paper.png" alt="✋"></div>
+                        <div class="options" id="player-option-3" onclick="round(2);"><img src="./images/scissor.png" alt="✌️"></div>
+                        <div class="points" id="playerPoints">0</div>
+                    </div>
+                </div>
+            </div>
+            <!-- All images designed by Freepik  https://www.freepik.com -->
+        </div>
+        <script src="./js/script.js"></script>
+        <script src="./js/script-enemy.js"></script>
+        <script src="./js/script-player.js"></script>
+        <script src="./js/script-anime.js"></script>
+        <script src="./js/script-anime-enemy.js"></script>
+    </body>
+</html>

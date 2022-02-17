@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+* body {
+  min-width: 200px;
+}
+* body {
+  overflow: hidden;
+}
+
+.wrapper {
+  background-color: #bc51c4;
+  background-image: radial-gradient(at 10% 75%, #4158D0 0, transparent 75%);
+  width: 100%;
+  min-height: 100vh;
+}
+.wrapper .game {
+  width: 70%;
+  height: 100vh;
+  min-height: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-options {
+  width: 100%;
+  height: 45.5vh;
+  backdrop-filter: blur(25px);
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+.wrapper-options .options-container {
+  width: 65%;
+  height: 90%;
+  margin: 0 auto;
+}
+
+#wrapper-enemy {
+  border-radius: 0 0 12px 12px;
+  border-top: none;
+  margin-bottom: 4.5vh;
+  display: flex;
+  align-items: start;
+}
+#wrapper-enemy img {
+  transform: rotate(180deg);
+}
+
+#wrapper-player {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+  margin-top: 4.5vh;
+  display: flex;
+  align-items: end;
+}
+
+#container-enemy {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "rock points scissors" ". paper .";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 5px;
+}
+#container-enemy #enemyPoints {
+  grid-area: points;
+}
+#container-enemy #enemy-option-1 {
+  grid-area: rock;
+}
+#container-enemy #enemy-option-2 {
+  grid-area: paper;
+}
+#container-enemy #enemy-option-3 {
+  grid-area: scissors;
+}
+#container-enemy .options {
+  cursor: default;
+}
+
+#container-player {
+  display: grid;
+  place-items: center;
+  grid-template-areas: ". paper ." "rock points scissors";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-top: 2px solid rgba(255, 255, 255, 0.12);
+  padding-top: 5px;
+}
+#container-player #playerPoints {
+  grid-area: points;
+}
+#container-player #player-option-1 {
+  grid-area: rock;
+}
+#container-player #player-option-2 {
+  grid-area: paper;
+}
+#container-player #player-option-3 {
+  grid-area: scissors;
+}
+#container-player .options {
+  cursor: pointer;
+}
+
+.options img {
+  height: 115px;
+}
+
+.points {
+  width: 100%;
+  min-width: 125px;
+  padding: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  font-size: 2.5em;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*Animations*/
+[data-anime=shake] {
+  animation-name: shake;
+  animation-duration: 0.3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+[data-anime=shake] img {
+  transition: 0.3s all linear;
+  height: 117px;
+  filter: contrast(1.15);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+/* Medias Querys */
+@media (max-width: 950px) {
+  .wrapper .game {
+    width: 80%;
+  }
+
+  .wrapper-options {
+    min-height: 300px;
+  }
+  .wrapper-options .options-container {
+    width: 80%;
+  }
+
+  #container-enemy {
+    grid-template-areas: ". points ." "rock paper scissors";
+  }
+
+  #container-player {
+    grid-template-areas: "rock paper scissors" ". points .";
+  }
+
+  .options {
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .options img {
+    height: 100px;
+  }
+
+  [data-anime=shake] img {
+    height: 103px;
+  }
+}
+@media (max-width: 700px) {
+  .wrapper .game {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  #container-enemy,
+#container-player {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .options {
+    height: 76px;
+  }
+  .options img {
+    height: 71px;
+  }
+
+  [data-anime=shake] img {
+    height: 74px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
