@@ -1,2 +1,3 @@
 # Rock-paper-and-scissors
-Game with JavaScript, SCSS e HTML 
+
+A rock, paper, scissors game project.  With animations, glassmorphism, responsive layout, scripts and etc...
